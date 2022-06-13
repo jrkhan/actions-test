@@ -28,4 +28,4 @@ jobs:
         formatted: 'cmd/$github.event.inputs.service'
       run: echo $formatted >> $GITHUB_STEP_SUMMARY
     - name: Direct Parse
-      run: echo resove expression ${{ startsWith(github.event.inputs.service, 'apps') && github.event.inputs.service else || 'cmd/$github.event.inputs.service'}} >> $GITHUB_STEP_SUMMARY
+      run: echo resove expression ${{ startsWith(github.event.inputs.service, 'apps') && github.event.inputs.service || 'cmd/$github.event.inputs.service'}} >> $GITHUB_STEP_SUMMARY
