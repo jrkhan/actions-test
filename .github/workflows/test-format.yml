@@ -23,4 +23,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Adding markdown
-      run: echo ${{ startsWith(github.event.inputs.service, 'apps') && ''|| 'cmd/'}} >> $GITHUB_STEP_SUMMARY
+      run: echo ${{ startsWith(github.event.inputs.service, 'apps') ? github.event.inputs.service : 'cmd/' + github.event.inputs.service}} >> $GITHUB_STEP_SUMMARY
