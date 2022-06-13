@@ -23,8 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: parseService
-      if: ${{ !startsWith($github.event.inputs.service, 'apps') }}
-      env: 
-        github.event.inputs.service: "cmd/$github.event.inputs.service"
+      run: | 
+        if [[ "$github.event.inputs.service" = apps* ]] then
+           echo 'OUT_SERVICE="cmd/$github.event.inputs.service"'
+        else 
+           echo 'OUT_SERVICE="$github.event.inputs.service"
+        fi
+        export github.event.inputs.service=$OUT_SERVICE
     - name: Direct Parse
       run: echo $github.event.inputs.service >> $GITHUB_STEP_SUMMARY
