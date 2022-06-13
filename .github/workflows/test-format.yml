@@ -27,7 +27,7 @@ jobs:
         if [[ "$github.event.inputs.service" = apps* ]]; then
            echo 'OUT_SERVICE="cmd/$github.event.inputs.service"'
         else 
-           echo 'OUT_SERVICE="$github.event.inputs.service"
+           echo 'OUT_SERVICE="$github.event.inputs.service"'
         fi
         export github.event.inputs.service=$OUT_SERVICE
     - name: Direct Parse
