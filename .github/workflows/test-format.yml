@@ -30,4 +30,4 @@ jobs:
            echo ::set-env OUT_SERVICE=cmd/${{ github.event.inputs.service }}
         fi
     - name: Used Parsed Service
-      run: echo "$OUT_SERVICE" >> $GITHUB_STEP_SUMMARY
+      run: echo ${{ env.OUT_SERVICE }} >> $GITHUB_STEP_SUMMARY
