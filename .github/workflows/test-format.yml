@@ -1,0 +1,26 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+    inputs:
+        service:
+          description: "Service to run"
+          required: true
+          type: choice
+          options:
+            - waterhose
+            - consumer-graphql-api
+            - nft-service
+            - apps/main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Adding markdown
+      run: echo ${{ startsWith(github.event.inputs.service, 'apps') && ''|| 'cmd/'}} >> $GITHUB_STEP_SUMMARY
