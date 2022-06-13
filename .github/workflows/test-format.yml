@@ -24,7 +24,7 @@ jobs:
     steps:
     - name: parseService
       run: | 
-        if [[ "$github.event.inputs.service" = apps* ]] then
+        if [[ "$github.event.inputs.service" = apps* ]]; then
            echo 'OUT_SERVICE="cmd/$github.event.inputs.service"'
         else 
            echo 'OUT_SERVICE="$github.event.inputs.service"
