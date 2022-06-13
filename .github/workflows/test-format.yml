@@ -25,9 +25,9 @@ jobs:
     - name: parseService
       run: | 
         if [[ "$github.event.inputs.service" = apps* ]]; then
-           echo ::set-env OUT_SERVICE=${{ github.event.inputs.service }}
+           echo "::set-env OUT_SERVICE=${{ github.event.inputs.service }}"
         else 
-           echo ::set-env OUT_SERVICE=cmd/${{ github.event.inputs.service }}
+           echo "::set-env OUT_SERVICE=cmd/${{ github.event.inputs.service }}"
         fi
     - name: Used Parsed Service
       run: echo ${{ env.OUT_SERVICE }} >> $GITHUB_STEP_SUMMARY
