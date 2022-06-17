@@ -33,5 +33,5 @@ jobs:
       run: |
         echo ${{ env.OUT_SERVICE }} >> $GITHUB_STEP_SUMMARY
         echo branch: ${GITHUB_REF##*/} >> $GITHUB_STEP_SUMMARY
-        echo **Branch:** [${GITHUB_REF#refs/heads/}](https://github.com/${{ GITHUB_REPOSITORY }}/tree/${GITHUB_REF#refs/heads/}) >> $GITHUB_STEP_SUMMARY
+        echo **Branch:** [${GITHUB_REF#refs/heads/}](${{ github.server_url }}/${{ github.repository }}/tree/${GITHUB_REF#refs/heads/}) >> $GITHUB_STEP_SUMMARY
      
