@@ -36,5 +36,5 @@ jobs:
       run: |
         echo ${{ env.OUT_SERVICE }} >> $GITHUB_STEP_SUMMARY
         echo branch: ${{ env.branch }}  >> $GITHUB_STEP_SUMMARY
-        echo **Branch:** [${{ env.branch }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ env.branch }}) >> $GITHUB_STEP_SUMMARY
+        echo "**Branch:** [${{ env.branch }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ env.branch }})" >> $GITHUB_STEP_SUMMARY
      
