@@ -30,7 +30,7 @@ jobs:
            echo "OUT_SERVICE=cmd/${{ github.event.inputs.service }}" >> $GITHUB_ENV
         fi
     - name: Parse Branch
-      run: echo "branch=${ GITHUB_REF#refs/heads/ }" >> $GITHUB_ENV
+      run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
       
     - name: Used Parsed Service
       run: |
